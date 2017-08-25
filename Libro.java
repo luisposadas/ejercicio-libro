@@ -1,13 +1,14 @@
 
 public class  Libro
 {
-  
+    private int prestamos;
     private String titulo;
     private String autor;
     private int paginas;
     private String numeroDeReferencia;
     public Libro(String tituloi,String autori, int paginasi)
     {
+        prestamos = 0;
         numeroDeReferencia = "";
         titulo = tituloi;
         autor = autori;
@@ -38,7 +39,9 @@ public class  Libro
         cadResultado = cadResultado + "Paginas";
         cadResultado = cadResultado + ":";
         cadResultado = cadResultado + paginas;
-        
+        cadResultado = cadResultado + "num prestamos";
+        cadResultado = cadResultado + ":";
+        cadResultado = cadResultado + prestamos;
   
         if(numeroDeReferencia != ""){
             cadResultado = cadResultado + "numeroDeReferencia";
@@ -67,7 +70,15 @@ public class  Libro
          return numeroDeReferencia;
         
      }
-     
+    public void prestar()
+    {
+        prestamos += 1;
+    }
+    public int dimePrestamos()
+     {
+         return prestamos;
+        
+     }
     
     
 }
